@@ -1,0 +1,25 @@
+{
+  "name": "getMediaDevices",
+  "version": "0.1.0",
+  "description": "A small project to normalize browser differences for enumerating media devices",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "2.22.0"
+  },
+  "scripts": {
+    "coffee": "coffee -c index.coffee",
+    "bundle": "node build.js",
+    "build": "npm run coffee && cp index.js tmp.js && npm run bundle && rm tmp.js"
+  },
+  "keywords": [
+    "webrtc",
+    "getUserMedia",
+    "getMediaDevices",
+    "getSources",
+    "enumerateDevices",
+    "MediaStreamTrack"
+  ],
+  "author": "Xander Dumaine (xander.dumaine@gmail.com)",
+  "license": "MIT"
+}
