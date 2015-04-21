@@ -14,7 +14,7 @@ getMediaDevices(function(devices) {
 });
 ```
 
-Test by running `npm start` and visiting [http://localhost:8880](http://localhost:8880)
+Test by running `npm start` and visiting [http://localhost:8880/test](http://localhost:8880/test)
 
 ####Who
 
