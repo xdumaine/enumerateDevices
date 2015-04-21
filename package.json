@@ -10,9 +10,9 @@
     "serve-static": "^1.9.2"
   },
   "scripts": {
-    "coffee": "coffee -c index.coffee",
+    "coffee": "coffee -c src/index.coffee",
     "bundle": "node build.js",
-    "build": "npm run coffee && cp index.js tmp.js && npm run bundle && rm tmp.js",
+    "build": "npm run coffee && mv src/index.js bin/tmp.js && npm run bundle && rm bin/tmp.js",
     "start": "npm run build && coffee server.coffee"
   },
   "keywords": [
