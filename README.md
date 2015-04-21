@@ -6,13 +6,15 @@ Because the usages and results of the two implementations differ, and it's nice 
 
 ####How
 
+```javascript
 getMediaDevices = require('getMediaDevices');
 
-```javascript
 getMediaDevices(function(devices) {
     console.log(devices);
 });
 ```
+
+Test by running `npm start` and visiting [http://localhost:8880](http://localhost:8880)
 
 ####Who
 
