@@ -1,6 +1,6 @@
 {
   "name": "getMediaDevices",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A small project to normalize browser differences for enumerating media devices",
   "main": "index.js",
   "dependencies": {},
@@ -10,10 +10,8 @@
     "serve-static": "^1.9.2"
   },
   "scripts": {
-    "coffee": "coffee -c src/index.coffee",
     "bundle": "node build.js",
-    "build": "npm run coffee && mv src/index.js bin/tmp.js && npm run bundle && rm bin/tmp.js",
-    "start": "npm run build && coffee server.coffee"
+    "start": "npm run bundle && node server.js"
   },
   "keywords": [
     "webrtc",

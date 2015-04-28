@@ -1,5 +1,5 @@
 var bundle = require('browserify')(),
     fs = require('fs');
 
-bundle.add('./bin/tmp');
-bundle.bundle({standalone: 'getMediaDevices'}).pipe(fs.createWriteStream('bin/index.js'));
+bundle.add('./index');
+bundle.bundle({standalone: 'getMediaDevices'}).pipe(fs.createWriteStream('getMediaDevices.bundle.js'));
