@@ -9,8 +9,12 @@ Because the usages and results of the two implementations differ, and it's nice 
 ```javascript
 getMediaDevices = require('getMediaDevices');
 
-getMediaDevices(function(devices) {
-    console.log(devices);
+getMediaDevices(function(err, devices) {
+    if(err) {
+        console.log(err.message); //device enumeration not supported
+    } else {
+        console.log(devices);
+    }
 });
 ```
 

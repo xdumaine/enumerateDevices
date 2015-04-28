@@ -1,4 +1,4 @@
-module.exports = function (cb, errCb) {
+module.exports = function (cb) {
     if (!cb || typeof cb !== 'function') {
         throw new Error('callback must be provided to enumerate devices');
     }
@@ -6,6 +6,7 @@ module.exports = function (cb, errCb) {
     var processDevices = function (devices) {
         var normalizedDevices = [];
         for (var i = 0; i < devices.length; i++) {
+            var device = devices[i];
             normalizedDevices.push({
                 facing: device.facing || null,
                 id: device.id || device.deviceId || null,
@@ -13,8 +14,8 @@ module.exports = function (cb, errCb) {
                 kind: device.kind || null,
                 groupId: device.groupId || null
             });
-            cb(normalizedDevices);
         }
+        cb(null, normalizedDevices);
     };
 
     if (window.navigator && window.navigator.mediaDevices && window.navigator.enumerateDevices) {
@@ -22,6 +23,6 @@ module.exports = function (cb, errCb) {
     } else if (window.MediaStreamTrack && window.MediaStreamTrack.getSources) {
         window.MediaStreamTrack.getSources(processDevices);
     } else {
-        errCb(new Error('Device enumeration not supported.'));
+        cb(new Error('Device enumeration not supported.'));
     }
 };
