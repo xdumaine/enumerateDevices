@@ -7,9 +7,9 @@ Because the usages and results of the two implementations differ, and it's nice 
 ####How
 
 ```javascript
-getMediaDevices = require('getMediaDevices');
+var enumerateDevices = require('enumerateDevices');
 
-getMediaDevices(function(err, devices) {
+enumerateDevices(function(err, devices) {
     if(err) {
         console.log(err.message); //device enumeration not supported
     } else {
