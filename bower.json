@@ -1,7 +1,7 @@
 {
-  "name": "getMediaDevices",
-  "version": "0.1.2",
-  "homepage": "https://github.com/xdumaine/getMediaDevices",
+  "name": "enumerateDevices",
+  "version": "0.1.3",
+  "homepage": "https://github.com/xdumaine/enumerateDevices",
   "authors": [
     "Xander Dumaine <xander.dumaine@inin.com>"
   ],
