@@ -22,7 +22,7 @@ Test by running `npm start` and visiting [http://localhost:8880/test](http://loc
 
 ####Demo
 
-View a demo of the module in use on [the test page](https://xdumaine.github.io/enumerateDevices/test).
+View a demo of the module in use on [the test page](https://xdumaine.github.io/enumerateDevices/test/).
 
 ####Who
 
