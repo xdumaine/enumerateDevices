@@ -11,7 +11,7 @@
     "pem": "^1.7.2"
   },
   "scripts": {
-    "bundle": "node build.js",
+    "bundle": "npm install && node build.js && cp node_modules/attachmediastream/getusermedia.bundle.js test/getusermedia.bundle.js && cp node_modules/attachmediastream/attachmediastream.bundle.js test/attachmediastream.bundle.js",
     "start": "npm run bundle && node server.js"
   },
   "keywords": [
