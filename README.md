@@ -18,7 +18,7 @@ enumerateDevices(function(err, devices) {
 });
 ```
 
-Test by running `npm start` and visiting [http://localhost:8880/test](http://localhost:8880/test)
+Test by running `npm start` and visiting [http://localhost:8880/test](http://localhost:8880/test/)
 
 ####Demo
 
