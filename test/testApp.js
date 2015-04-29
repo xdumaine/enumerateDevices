@@ -43,6 +43,7 @@ function getVideoWithDevices(audioDeviceId, videoDeviceId) {
         mediaStreamInUse = stream;
         attachMediaStream(stream, $('#video-preview')[0], options);
         updateDeviceOptions();
+        $('#get-started').addClass('hide');
     });
 }
 function updateDeviceOptions () {

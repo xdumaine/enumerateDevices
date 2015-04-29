@@ -3,14 +3,25 @@
     <head>
         <title>Enumerate Devices Demo</title>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
+        <link rel="stylesheet" href="yeti-guide.min.css"/>
     </head>
     <body>
         <style>
+            section {
+                max-width: 600px;
+                margin: auto;
+            }
             .hide {
                 display: none;
             }
             .error-message {
                 color: red;
+            }
+            video {
+                height: 0;
+            }
+            video[src^="blob"] {
+                height: auto;
             }
         </style>
         <div class="github-fork-ribbon-wrapper right">
@@ -18,21 +29,26 @@
                 <a href="https://github.com/xdumaine/enumerateDevices">Fork me on GitHub</a>
             </div>
         </div>
-        <div id="http-message">
-            <p>To avoid repeated permissions prompts, run on https</p>
-            <p>Devices will have generic labels (e.g., "camera 1") on http. For real device names, run on https.</p>
-        </div>
-        <div id="device-selection">
-            <select id="video-options"></select>
-            <select id="audio-options"></select>
-            <button type="button" id="refresh-video">Get Video From Devices</button>
-        </div>
-        <div id="video-display">
-            <video id="video-preview"></video>
-        </div>
-        <div class="error-message hide">
-            <p>Sorry, your browser doesn't support device enumeration</p>
-        </div>
+        <section>
+            <aside id="http-message">
+                <p>To avoid repeated permissions prompts, run on https</p>
+                <p>Devices will have generic labels (e.g., "camera 1") on http. For real device names, run on https.</p>
+            </aside>
+            <aside class="error-message hide">
+                <p>Sorry, your browser doesn't support device enumeration</p>
+            </aside>
+            <fieldset id="device-selection">
+                <legend>Select Devices</legend>
+                <select id="video-options"></select>
+                <select id="audio-options"></select>
+                <button class="button button-small" id="refresh-video">Get Media</button>
+            </fieldset>
+            <fieldset id="video-display">
+                <legend>Video Result</legend>
+                <aside id="get-started">Press "Get Media" to start</aside>
+                <video id="video-preview"></video>
+            </fieldset>
+        </section>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="../enumerateDevices.bundle.js"></script>
         <script src="getusermedia.bundle.js"></script>
