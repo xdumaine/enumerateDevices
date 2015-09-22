@@ -19,7 +19,7 @@ function buildConstraints(audioDeviceId, videoDeviceId) {
     }
     if (videoDeviceId) {
         mediaConstraints.video = {
-            optional: [ { sourceId: videoDeviceId } ]
+            deviceId: { exact: videoDeviceId }
         };
     } else {
         mediaConstraints.video = true;
