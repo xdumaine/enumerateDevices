@@ -1,5 +1,5 @@
 {
-  "name": "enumerateDevices",
+  "name": "enumerate-devices",
   "version": "1.0.0",
   "description": "A small project to normalize browser differences for enumerating media devices",
   "main": "index.js",
