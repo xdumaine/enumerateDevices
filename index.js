@@ -31,7 +31,7 @@ module.exports = function (cb) {
         } else if (window.MediaStreamTrack && window.MediaStreamTrack.getSources) {
             window.MediaStreamTrack.getSources(processDevices);
         } else {
-            err = {
+            var err = {
                 message: 'Device enumeration not supported.',
                 kind: 'METHOD_NOT_AVAILABLE'
             };
