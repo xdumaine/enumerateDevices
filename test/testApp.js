@@ -5,7 +5,6 @@ function setError(err, $featureContainer) {
         $featureContainer.toggleClass('hide', !!err);
     }
     $('.error-message').toggleClass('hide', !err).text(err && err.message);
-    return !!err;
 }
 
 function buildConstraints(audioDeviceId, videoDeviceId) {
@@ -47,9 +46,8 @@ function getVideoWithDevices(audioDeviceId, videoDeviceId) {
     });
 }
 function updateDeviceOptions () {
-    enumerateDevices(function(err, devices) {
-        if (setError(err, $('#video-display, #device-selection'))) return;
-
+    enumerateDevices().then(function(devices) {
+        setError(null);
         var selectedAudio = $('#audio-options').val();
         var selectedVideo = $('#video-options').val();
 
@@ -82,6 +80,8 @@ function updateDeviceOptions () {
         } else {
             $('#video-options')[0].selectedIndex = 0;
         }
+    }).catch(function(err) {
+        setError(err, $('#video-display, #device-selection'));
     });
 }
 
