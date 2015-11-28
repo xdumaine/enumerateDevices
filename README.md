@@ -7,6 +7,13 @@ Because the usages and results of the two implementations differ, and it's nice 
 ####How
 
 ```javascript
+//promises!
+const enumerateDevices = require('enumerateDevices');
+
+enumerateDevices().then((devices) => console.log(devices)).catch(console.log.bind(console));
+
+//or callbacks!
+
 var enumerateDevices = require('enumerateDevices');
 
 enumerateDevices(function(err, devices) {
