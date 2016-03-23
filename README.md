@@ -8,13 +8,13 @@ Because the usages and results of the two implementations differ, and it's nice 
 
 ```javascript
 //promises!
-const enumerateDevices = require('enumerateDevices');
+const enumerateDevices = require('enumerate-devices');
 
 enumerateDevices().then((devices) => console.log(devices)).catch(console.log.bind(console));
 
 //or callbacks!
 
-var enumerateDevices = require('enumerateDevices');
+var enumerateDevices = require('enumerate-devices');
 
 enumerateDevices(function(err, devices) {
     if(err) {
