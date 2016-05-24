@@ -31,10 +31,8 @@ module.exports = function (cb) {
         } else if (window.MediaStreamTrack && window.MediaStreamTrack.getSources) {
             window.MediaStreamTrack.getSources(processDevices);
         } else {
-            var err = {
-                message: 'Device enumeration not supported.',
-                kind: 'METHOD_NOT_AVAILABLE'
-            };
+            var err = new Error('Device enumeration not supported.');
+            err.kind = 'METHOD_NOT_AVAILABLE';
             reject(err);
             if (cb) {
                 console.warn('module now uses promise based api - callback is deprecated');
