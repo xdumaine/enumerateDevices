@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A small project to normalize browser differences for enumerating media devices",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xdumaine/enumerateDevices"
+  },
   "dependencies": {},
   "devDependencies": {
     "attachmediastream": "^1.2.0",
