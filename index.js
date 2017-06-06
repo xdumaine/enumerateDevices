@@ -1,4 +1,14 @@
 module.exports = function (cb) {
+    if (typeof Promise !== 'function') {
+      var err = new Error('Device enumeration not supported.');
+      err.kind = 'METHOD_NOT_AVAILABLE';
+      if (cb) {
+          console.warn('module now uses promise based api - callback is deprecated');
+          return cb(err);
+      }
+      throw err;
+    }
+
     return new Promise(function(resolve, reject) {
         var processDevices = function (devices) {
             var normalizedDevices = [];
